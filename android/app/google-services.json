@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1070188852194",
+    "firebase_url": "https://rsaapp-8551f.firebaseio.com",
+    "project_id": "rsaapp-8551f",
+    "storage_bucket": "rsaapp-8551f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1070188852194:android:335be2c71334a2b6107fbb",
+        "android_client_info": {
+          "package_name": "ec.pulpo.agents.rsa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1070188852194-m8bdf99up8vn8oact5lapv6rufho7gih.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_ke8aNdZecMTVpMhINnUI8a8kebEIqqA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1070188852194-m8bdf99up8vn8oact5lapv6rufho7gih.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
