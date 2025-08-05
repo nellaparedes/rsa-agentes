@@ -3,13 +3,10 @@
     "name": "RSA Agentes",
     "slug": "rsaagentsapp",
     "privacy": "public",
-    "platforms": [
-      "ios",
-      "android"
-    ],
+    "platforms": ["ios", "android"],
     "version": "1.0.6",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+
     "splash": {
       "image": "./assets/images/intro_rsa_agente.png",
       "resizeMode": "cover"
@@ -17,35 +14,26 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "notification": {
       "icon": "./assets/images/icon_notf.png"
     },
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "ec.pulpo.agents.rsa",
-      "buildNumber": "10",
-      "image": "macos-ventura-13.6-xcode-15.0"
+      "buildNumber": "10"
     },
     "android": {
       "versionCode": 10,
       "package": "ec.pulpo.agents.rsa",
       "googleServicesFile": "./google-services.json",
-      "useNextNotificationsApi": true,
-      "permissions": [],
-      "config": {
-        "keystore": "rsaagentsapp.jks",
-        "keystoreAlias": "QHJzYWdydXBvZWMvcnNhYWdlbnRzYXBw",
-        "keystorePassword": "94689448c31c4ee280aa4355869e9f0f",
-        "keyPassword": "3e9f1e69e36e46778e01a6c0592f85a9"
-      }
+      "permissions": []
     },
     "extra": {
       "eas": {
         "projectId": "f42c6618-fc5f-4c0d-a8f0-091a70a6fd88"
       }
-    }
+    },
+    "plugins": ["expo-font"]
   }
 }
