@@ -23,12 +23,10 @@ export default class ContractScreen extends React.Component {
     super(props);
     this.rsaApi = new rsaApi();
 
-    console.log("=============>", this.props.navigation?.state);
-
     this.state = {
       loading: false,
-      client: this.props.navigation?.state?.params?.client,
-      name: this.props.navigation?.state?.params?.name,
+      client: this.props.route.params?.client,
+      name: this.props.route.params?.name,
       tab: "policies",
       data: [],
     };

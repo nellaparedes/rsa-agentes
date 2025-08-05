@@ -23,7 +23,7 @@ import Colors from "../constants/Colors";
 
 //Test send expo push token
 import Constants from "expo-constants";
-// import * as Permissions from 'expo-permissions';
+import * as Device from "expo-device";
 import * as Notifications from "expo-notifications";
 import {
   faArrowRight,
@@ -97,22 +97,29 @@ export default class HomeScreen extends React.Component {
   async sendPushToken() {
     try {
       let pushtoken;
-      // if (Constants.isDevice) {
-      //     const { status: existingStatus } = await Permissions.getAsync(Permissions.NOTIFICATIONS);
-      //     let finalStatus = existingStatus;
-      //     if (existingStatus !== 'granted') {
-      //         const { status } = await Permissions.askAsync(Permissions.NOTIFICATIONS);
-      //         finalStatus = status;
-      //     }
-      //     if (finalStatus !== 'granted') {
-      //         alert('Las notificaciones push han sido deshabilitadas.');
-      //         return;
-      //     }
+      if (Device.isDevice) {
+        // Pedir permisos directamente desde expo-notifications
+        const { status: existingStatus } =
+          await Notifications.getPermissionsAsync();
+        let finalStatus = existingStatus;
 
-      //     pushtoken = (await Notifications.getExpoPushTokenAsync()).data;
-      // } else {
-      //     alert('Las notificaciones push solo están disponibles en dispositivos físicos.');
-      // }
+        if (existingStatus !== "granted") {
+          const { status } = await Notifications.requestPermissionsAsync();
+          finalStatus = status;
+        }
+
+        if (finalStatus !== "granted") {
+          alert("Las notificaciones push han sido deshabilitadas.");
+          return;
+        }
+
+        pushtoken = (await Notifications.getExpoPushTokenAsync()).data;
+        console.log("Push token:", pushtoken);
+      } else {
+        alert(
+          "Las notificaciones push solo están disponibles en dispositivos físicos."
+        );
+      }
 
       if (Platform.OS === "android") {
         Notifications.setNotificationChannelAsync("default", {
