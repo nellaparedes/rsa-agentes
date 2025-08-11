@@ -20,12 +20,12 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "ec.pulpo.agents.rsa",
+      "bundleIdentifier": "atc.agents.rsa",
       "buildNumber": "20"
     },
     "android": {
       "versionCode": 20,
-      "package": "ec.pulpo.agents.rsa",
+      "package": "atc.agents.rsa",
       "googleServicesFile": "./google-services.json",
       "permissions": []
     },
