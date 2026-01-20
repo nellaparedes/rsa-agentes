@@ -134,7 +134,7 @@ export default class HomeScreen extends React.Component {
       await this.rsaApi.sendPushtoken(token, { push_token: pushtoken });
       return;
     } catch (err) {
-      Alert.alert("Error", err.message, [{ text: "Cerrar" }]);
+      // Alert.alert("Error", err.message, [{ text: "Cerrar" }]);
     }
   }
 
