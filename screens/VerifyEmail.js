@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 
 import TextCatam from "../components/TextCatamaran";
-import Modal from 'react-native-modalbox';
+import Modal from '../components/CenterModal';
 import Colors from "../constants/Colors";
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 

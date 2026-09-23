@@ -4,7 +4,7 @@ import { ScrollView, Platform, StatusBar, StyleSheet, TextInput, Alert, Touchabl
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { TextInputMask } from 'react-native-masked-text'
 import RNPickerSelect from 'react-native-picker-select';
-import DatePicker from 'react-native-datepicker';
+import DateField from '../../components/DateField';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 
 //Components
@@ -332,21 +332,12 @@ export default class AddPotentialStep1 extends React.Component {
                             </View>
                             <View style={styles.colRight}>
                                 <TextCatam others={styles.label}>Fecha Oferta *</TextCatam>
-                                <DatePicker
-                                    style={{ width: '100%' }}
-                                    date={this.state.date_ofert}
-                                    mode="date"
+                                <DateField
+                                    style={styles.inputDate}
+                                    value={this.state.date_ofert}
                                     placeholder="dd-mm-aaaa"
-                                    format="DD-MM-YYYY"
-                                    showIcon={false}
-                                    confirmBtnText="Confirmar"
-                                    cancelBtnText="Cancelar"
-                                    customStyles={{
-                                        dateInput: styles.inputDate,
-                                        dateText: styles.inputDateText,
-                                        placeholderText: styles.inputDateText,
-                                    }}
-                                    onDateChange={val => this.onChangeText('date_ofert', val)}
+                                    textStyle={styles.inputDateText}
+                                    onChange={val => this.onChangeText('date_ofert', val)}
                                 />
                             </View>
                         </View>
@@ -361,21 +352,12 @@ export default class AddPotentialStep1 extends React.Component {
                             </View>
                             <View style={styles.colRight}>
                                 <TextCatam others={styles.label}>Fecha Vcto. Seg. Actual</TextCatam>
-                                <DatePicker
-                                    style={{ width: '100%' }}
-                                    date={this.state.date_vcto_seg}
-                                    mode="date"
+                                <DateField
+                                    style={styles.inputDate}
+                                    value={this.state.date_vcto_seg}
                                     placeholder="dd-mm-aaaa"
-                                    format="DD-MM-YYYY"
-                                    showIcon={false}
-                                    confirmBtnText="Confirmar"
-                                    cancelBtnText="Cancelar"
-                                    customStyles={{
-                                        dateInput: styles.inputDate,
-                                        dateText: styles.inputDateText,
-                                        placeholderText: styles.inputDateText,
-                                    }}
-                                    onDateChange={val => this.onChangeText('date_vcto_seg', val)}
+                                    textStyle={styles.inputDateText}
+                                    onChange={val => this.onChangeText('date_vcto_seg', val)}
                                 />
                             </View>
                         </View>
@@ -487,8 +469,10 @@ const styles = StyleSheet.create({
         height: '59%',
     },
     inputDate: {
-        height: Platform.OS == 'ios' ? 36 : 20,
+        height: Platform.OS == 'ios' ? 36 : 28,
         alignItems: 'flex-start',
+        justifyContent: 'flex-end',
+        paddingBottom: 4,
         borderWidth: 0,
         borderBottomWidth: 1,
         borderBottomColor: Colors.greenLight,

@@ -2,22 +2,19 @@
   "expo": {
     "name": "RSA Agentes",
     "slug": "rsaagentsapp",
-    "privacy": "public",
-    "platforms": ["ios", "android"],
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "version": "1.0.9",
     "orientation": "portrait",
     "icon": "./assets/images/icon-app.png",
-    "splash": {
-      "image": "./assets/images/intro_rsa_agente.png",
-      "resizeMode": "cover"
-    },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
-    "notification": {
-      "icon": "./assets/images/icon_notf.png"
-    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "atc.agents.rsa",
@@ -34,6 +31,22 @@
         "projectId": "f42c6618-fc5f-4c0d-a8f0-091a70a6fd88"
       }
     },
-    "plugins": ["expo-font"]
+    "plugins": [
+      "expo-font",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/icon_notf.png"
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/intro_rsa_agente.png",
+          "resizeMode": "cover",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    ]
   }
 }

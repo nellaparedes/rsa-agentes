@@ -14,7 +14,7 @@ import {
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import call from "react-native-phone-call";
-import ProgressCircle from "react-native-progress-circle";
+import ProgressCircle from "../components/ProgressCircle";
 
 //Components
 import Icon from "../components/IconCustom";
@@ -38,7 +38,8 @@ import {
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
-    shouldShowAlert: true,
+    shouldShowBanner: true,
+    shouldShowList: true,
     shouldPlaySound: true,
     shouldSetBadge: false,
   }),
@@ -113,7 +114,8 @@ export default class HomeScreen extends React.Component {
           return;
         }
 
-        pushtoken = (await Notifications.getExpoPushTokenAsync()).data;
+        const projectId = Constants.expoConfig?.extra?.eas?.projectId;
+        pushtoken = (await Notifications.getExpoPushTokenAsync({ projectId })).data;
         console.log("Push token:", pushtoken);
       } else {
         alert(
