@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:1070188852194:android:335be2c71334a2b6107fbb",
         "android_client_info": {
-          "package_name": "atc.agents.rsa"
+          "package_name": "ec.pulpo.agents.rsa"
         }
       },
       "oauth_client": [

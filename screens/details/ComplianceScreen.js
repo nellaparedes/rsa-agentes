@@ -1,7 +1,7 @@
 import rsaApi from '../../api/rsa.js';
 import React from 'react';
 import { ScrollView, Platform, StatusBar, StyleSheet, TouchableOpacity, View, Alert, ActivityIndicator } from 'react-native';
-import ProgressCircle from 'react-native-progress-circle';
+import ProgressCircle from '../../components/ProgressCircle';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 //Components
 import Colors from "../../constants/Colors";

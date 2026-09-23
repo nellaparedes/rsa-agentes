@@ -23,7 +23,7 @@ import NotificationsScreen from '../screens/more/NotificationsScreen';
 import FolioScreen from '../screens/details/FolioScreen';
 import ContractScreen from '../screens/details/ContractScreen';
 import ClaimsScreen from '../screens/details/ClaimsScreen';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faBullseye, faDollar, faHome, faHomeAlt, faHomeLg, faPlus, faSackDollar, faShirt, faTShirt } from '@fortawesome/free-solid-svg-icons';
 
